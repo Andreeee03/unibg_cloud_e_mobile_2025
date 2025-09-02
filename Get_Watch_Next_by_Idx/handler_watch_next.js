@@ -35,7 +35,7 @@ module.exports.get_watch_next_by_idx = async (event, context, callback) => {
     const why = await explainWithGemini(current, candidate);
 
     return callback(null, ok({
-      current: { _id: current._id, title: current.title, tags: current.tags || [] },
+      current: { _id: current._id, title: current.title, description: current.description, tags: current.tags || [] },
       candidate,
       why
     }));
